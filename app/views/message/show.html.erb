@@ -1,0 +1,9 @@
+<p> Welcome <%= @user.first_name %> ! Ici c'est notre super site de potins, il est chouette, non ? </p>
+<form action '/' method="post">
+    <input type="hidden" name="authenticity_token" value="<%=
+    form_authenticity_token %>">
+    <input type="text" name="first_name">
+    <input type="submit" name="Evoyer">
+</form>
+
+<p> <%= link_to "Voir la liste de tous les gossips", "gossips" %> </p>

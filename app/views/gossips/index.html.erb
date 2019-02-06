@@ -1,0 +1,20 @@
+<br><br>
+<p>Voici la liste des gossips existants :</p>
+<section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col"><h1>Auteur</h1></div>
+      <div class="col"><h1>Gossip</h1></div>
+      <div class="col"><h1>Link</h1></div>
+      <% Gossip.all.each do |gossip| %>
+      <div class="w-100"></div>
+      <div class="col"><%=gossip.user.first_name %></div>
+      <div class="col"><%=gossip.title %></div>
+      <div class="col">  <%= link_to("Gossip link", "gossips/#{gossip.id}") %>
+      </div>
+      <%  end  %>
+    </div>
+  </div>
+
+</section>
