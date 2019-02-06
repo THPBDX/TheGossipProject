@@ -4,7 +4,7 @@
     <section>
 
       <div class="container">
-        <% Gossip.all.select{|gossip| gossip.user.city.name=@city.name}.each do |gossip| %>
+        <% Gossip.all.select{|gossip| gossip.user.city.name = @city.name}.each do |gossip| %>
         <div class="card-deck-wrapper">
           <div class="card-deck">
 
