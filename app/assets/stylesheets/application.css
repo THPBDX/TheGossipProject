@@ -17,7 +17,18 @@
 	margin: 10px;
 }
 
-h5 {
+p {
+	margin: 10px;
+}
 
-	margin-top: 20px;
+.card {
+	border: 0 none;
+	border-radius: 0 !important;
+	position: relative;
+	display: -webkit-box; display: -ms-flexbox; display: flex;
+	-webkit-box-orient:vertical;
+  	-webkit-box-direction:normal;
+  	-ms-flex-direction:column;  flex-direction:column;
+ 	min-width:0;
+  	word-wrap:break-word;
 }
