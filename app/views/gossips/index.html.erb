@@ -1,16 +1,16 @@
+<!DOCTYPE html>
+<html>
 <br><br>
 
-<p> Welcome <%= @name %> !  </p>
+<h3><small class="text-muted">Welcome <%= @name %> !</small></h3>
 <br>
 
 <h5>Voici nos gossips les plus 🔥 :</h5>
-<section>
-
+<body>
   <div class="container">
     <% Gossip.all.each do |gossip| %>
     <div class="card-deck-wrapper">
       <div class="card-deck">
-
         <div class="card bg-secondary mb-3" style="max-width: 20rem;">
           <div class="card-header"><%=gossip.title %></div>
           <div class="card-body">
@@ -20,6 +20,7 @@
         </div>
       </div>
       <%  end  %>
+    </div>
   </div>
-
-</section>
+</body>
+</html>
