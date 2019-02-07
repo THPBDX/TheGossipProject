@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_114246) do
+ActiveRecord::Schema.define(version: 2019_02_07_141653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 2019_02_06_114246) do
     t.integer "postal_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "gossip_id"
+    t.index ["gossip_id"], name: "index_comments_on_gossip_id"
   end
 
   create_table "gossips", force: :cascade do |t|
@@ -50,6 +56,12 @@ ActiveRecord::Schema.define(version: 2019_02_06_114246) do
     t.index ["sender_id"], name: "index_private_messages_on_sender_id"
   end
 
+  create_table "sub_comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "comment_id"
+    t.index ["comment_id"], name: "index_sub_comments_on_comment_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -68,8 +80,10 @@ ActiveRecord::Schema.define(version: 2019_02_06_114246) do
     t.index ["city_id"], name: "index_users_on_city_id"
   end
 
+  add_foreign_key "comments", "gossips"
   add_foreign_key "gossips", "users"
   add_foreign_key "join_table_gossip_tags", "gossips"
   add_foreign_key "join_table_gossip_tags", "tags"
+  add_foreign_key "sub_comments", "comments"
   add_foreign_key "users", "cities"
 end
