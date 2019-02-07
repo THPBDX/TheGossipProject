@@ -25,17 +25,12 @@ p {
 	text-align: center;
 }
 
-/*.card {
+.card {
 	border: 0 none;
 	border-radius: 0 !important;
-	position: relative;
-	display: -webkit-box; display: -ms-flexbox; display: flex;
-	-webkit-box-orient:vertical;
-  	-webkit-box-direction:normal;
-  	-ms-flex-direction:column;  flex-direction:column;
- 	min-width:0;
-  	word-wrap:break-word;
-}*/
+	display: flex;
+	flex-direction:row;
+}
 
 body {
 
@@ -43,35 +38,73 @@ body {
 
 .navbar {
 	width: 100%;
+	flex-direction: row;
 }
 
 .navbar-brand{
 	width: 60%;
 	display: flex;
-	justify-content: space-between;
-}
-
-.input-bar {
-	width: 120px;
-}
-
-.input-submit {
-	width: 60px;
+	justify-content: flex-start;
 }
 
 .form-group {
 	display: flex;
-	flex-direction: row-reverse;
+	justify-content: center;
 }
 
 .container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: row !important;
 	flex-wrap: wrap;
-	align-content: flex-end;
+	justify-content: center;
+	align-content: center;
+}
+
+.card-deck {
+	display: flex;
+	flex-direction: row !important;
+	justify-content: flex-start;
+	color: blue;
 }
 
 .card {
+	display: flex;
+	justify-content: center;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
  	transition: 0.3s;
+}
+
+input {
+	outline: none;
+	width: 200px;
+	align-self: center;
+}
+
+textarea {
+	width: 400px;
+	height: 150px;
+	resize: none;
+	outline: none;
+}
+
+input[type=submit] {
+	width: 80px !important;
+	background-color: transparent;
+	border-radius: 2px;
+	font-family: "Nunito Sans" !important;
+	letter-spacing: 0.15em;
+}
+
+input[type=submit]:hover{
+	background-color: #e6e5e5;
+	font-color: white;
+	border-radius: 2px;
+	font: "Nunito Sans";
+}
+
+input[type=submit]:active {
+	background-color: #e6e5e5;
+	border-radius: 2px;
+	font: "Nunito Sans";
+
 }
