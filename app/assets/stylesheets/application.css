@@ -14,14 +14,18 @@
  *= require_self
  */
 * {
-	margin: 10px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
 }
 
 p {
-	margin: 10px;
+	margin: 20px;
+	display: flex;
+	text-align: center;
 }
 
-.card {
+/*.card {
 	border: 0 none;
 	border-radius: 0 !important;
 	position: relative;
@@ -31,4 +35,31 @@ p {
   	-ms-flex-direction:column;  flex-direction:column;
  	min-width:0;
   	word-wrap:break-word;
+}*/
+
+body {
+
+}
+
+.navbar {
+	width: 100%;
+}
+
+.navbar-brand{
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.input-bar {
+	width: 120px;
+}
+
+.input-submit {
+	width: 60px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: row-reverse;
 }
