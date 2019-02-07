@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   post '/', to: 'message#show'
 
   get '/contact', to: 'contact#show'
-get '/team', to: 'team#show'
+  get '/team', to: 'team#show'
 
-resources :gossips
-resources :users
-resources :cities
+  
+
+  resources :gossips
+  resources :users
+  resources :cities
 
 end
