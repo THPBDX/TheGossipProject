@@ -4,7 +4,7 @@
     <section>
 
       <div class="container">
-        <% Gossip.all.select{|gossip| gossip.user.city.name = @city.name}.each do |gossip| %>
+        <% Gossip.where(User.where((City.where(name = @city.name)).city.name = @city.name).user.city.name = @city.name) do |gossip| %>
         <div class="card-deck-wrapper">
           <div class="card-deck">
 

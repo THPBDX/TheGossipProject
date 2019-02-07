@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 get '/team', to: 'team#show'
 
 resources :gossips
+resources :users
+resources :cities
 
 end

@@ -16,9 +16,24 @@ class GossipsController < ApplicationController
   end
 
   def create
+    # A changer avec le user loggé
+    @user = User.first
     # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
     # pour info, le contenu de ce formulaire sera accessible dans le hash params (ton meilleur pote)
     # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
+    @gossip = Gossip.new(title: params[:title],content: params[:content],user: @user) # avec xxx qui sont les données obtenues à partir du formulaire
+    puts "c'est passé dans le controlleur !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    puts @gossip.title
+    puts @gossip.content
+    puts @gossip.user
+
+  if @gossip.save # essaie de sauvegarder en base @gossip
+    # si ça marche, il redirige vers la page d'index du site
+    render "/gossips/show"
+  else
+    # sinon, il render la view new (qui est celle sur laquelle on est déjà)
+    render "gossips/new"
+  end
   end
 
   def edit
