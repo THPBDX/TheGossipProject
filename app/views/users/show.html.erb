@@ -1,16 +1,14 @@
 <div class="container">
+    <br><br><br>
+    <h1>Hey <%=@user.first_name %> <%=@user.last_name %> ! 😉</h1>
+<div class="user-page">
   <div class="row">
-    <div class="col"><h1>Prénom</h1></div>
-    <div class="col"><h1>Nom</h1></div>
-    <div class="col"><h1>Description</h1></div>
-    <div class="col"><h1>Email</h1></div>
-    <div class="col"><h1>Age</h1></div>
-    <div class="col"><h1>Ville</h1></div>
+    <div class="col"><h2>Email</h2></div>
+    <div class="col"><h2>Age</h2></div>
+    <div class="col"><h2>Ville</h2></div>
 
-    <div class="w-100"></div>
+    <div class="w-100"></div><br>
 
-    <div class="col"><%=@user.first_name %></div>
-    <div class="col"><%=@user.last_name %></div>
     <div class="col"><%=@user.email %></div>
     <div class="col"><%=@user.age %></div>
     <div class="col"><%= link_to(@user.city.name, "/cities/#{@user.city.id}") %></div>
