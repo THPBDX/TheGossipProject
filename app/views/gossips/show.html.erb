@@ -16,8 +16,8 @@
 
     <div class="col"><%=@gossip.title %></div>
     <% @full_name=@gossip.user.first_name + " "+ @gossip.user.last_name %>
-    <div class="col"><%= link_to(@full_name, "users/#{@gossip.user.id}") %></div>
+    <div class="col"><%= link_to(@full_name, "/users/#{@gossip.user.id}") %></div>
     <div class="col"><%=@gossip.content %></div>
-    <div class="col"><%= link_to(@gossip.user.city.name, "cities/#{@gossip.user.city.id}") %></div>
+    <div class="col"><%= link_to(@gossip.user.city.name, "/cities/#{@gossip.user.city.id}") %></div>
   </div>
 </div>
