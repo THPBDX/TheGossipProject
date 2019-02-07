@@ -1,19 +1,20 @@
 <% if @gossip != nil %>
  <% if @gossip.errors.any? %>
   <% else %>
-  <p>Trop bien ton potin a été sauvegardé bravo !</p>
+  <br>
+  <h5>🎉 Yeaaaah ! 🎊 Ton potin a été sauvegardé avec succès ! 🥳</h5> <!-- ! Attention ça doit être une alerte ! -->
 <% end %>
 <% end %>
 
 <div class="container">
   <div class="row">
-    <div class="col"><h1>Titre</h1></div>
-    <div class="col"><h1>Auteur</h1></div>
-    <div class="col"><h1>Contenu</h1></div>
-    <div class="col"><h1>Ville de l'auteur</h1></div>
+    <div class="col"><h2>Titre</h2></div>
+    <div class="col"><h2>Auteur</h2></div>
+    <div class="col"><h2>Contenu</h2></div>
+    <div class="col"><h2>Ville de l'auteur</h2></div>
 
     <div class="w-100"></div>
-
+    <br>
     <div class="col"><%=@gossip.title %></div>
     <% @full_name=@gossip.user.first_name + " "+ @gossip.user.last_name %>
     <div class="col"><%= link_to(@full_name, "/users/#{@gossip.user.id}") %></div>
@@ -22,14 +23,14 @@
   </div>
 </div>
 
-<br><br><br><br><br><br><br>
+<br><br><br>
 <div class="col"><%= link_to("Editer le gossip", "/gossips/#{@gossip.id}/edit") %></div>
 
 <br><br><br>
-
+<div class="delete-button"
 <%= button_to "Supprimer le gossip", "/gossips/#{@gossip.id}", method: :delete %>
 <!-- <form method="delete" action="/gossips/#{@gossip.id}" class="button_to">
 <input type="hidden" name="_method" value="delete" />
 <input data-confirm='Are you sure?' value="Delete Gossip" type="submit" />
 <input name="authenticity_token" type="hidden" value=/>
-</form>" -->
+</div>
