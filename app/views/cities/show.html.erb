@@ -4,7 +4,11 @@
     <section>
 
       <div class="container">
-        <% Gossip.where(User.where((City.where(name = @city.name)).city.name = @city.name).user.city.name = @city.name) do |gossip| %>
+       <% puts  Gossip.all.select{|gossip| gossip.user.city.name = @city.name} %>
+
+
+        <% Gossip.all.select{|gossip| gossip.user.city.name = @city.name}.each do |gossip| %>
+
         <div class="card-deck-wrapper">
           <div class="card-deck">
 
@@ -12,7 +16,7 @@
               <div class="card-header"><%=gossip.title %></div>
               <div class="card-body">
                 <h6 class="card-text">Créé par <%=gossip.user.first_name %></h6>
-                <p><%= link_to("Gossip link", "gossips/#{gossip.id}") %></p>
+                <p><%= link_to("Gossip link", "/gossips/#{gossip.id}") %></p>
               </div>
             </div>
           </div>

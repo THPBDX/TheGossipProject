@@ -5,7 +5,10 @@ class CitiesController < ApplicationController
 
   def show
     id = params["id"].to_i
+    puts "L'ID du gossip :"
+    puts id
     @city = City.find(id)
+
   end
 
   def new

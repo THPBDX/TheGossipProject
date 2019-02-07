@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     id = params["id"].to_i
+    puts "L'ID du gossip :"
+    puts id
     @user = User.find(id)
   end
 

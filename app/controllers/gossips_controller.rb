@@ -5,10 +5,13 @@ class GossipsController < ApplicationController
   end
 
   def show
-    puts "L'ID du gossip :"
+    puts "params :"
+    puts params
     id = params["id"].to_i
-    @gossip = Gossip.find(id)
+    puts "L'ID du gossip :"
     puts id
+    @gossip = Gossip.find(id)
+
   end
 
   def new
