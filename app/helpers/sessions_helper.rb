@@ -8,8 +8,10 @@ module SessionsHelper
  end
 
   def logged_in?
-    if session[:user_id] != nil
-      return true
-    else
-      return false
+    session[:user_id] != nil ? true:false
+  end
+
+  def new
+  end
+  
 end

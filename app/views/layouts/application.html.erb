@@ -30,6 +30,17 @@
         <li class="nav-item">
           <%= link_to "Contact", "/contact" %>
         </li>
+
+
+
+      <li class="nav-item">
+        <% if logged_in? %>
+          <%= link_to "Se déconnecter", "/sessions/#{current_user.id}", method: :delete %>
+              <% else %>
+          <%= link_to "Se connecter", "/sessions/log_in" %>
+          <%= link_to "S'inscrire", "/sessions/sign_up" %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </nav>

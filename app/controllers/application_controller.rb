@@ -1,3 +1,22 @@
 class ApplicationController < ActionController::Base
-  include app/helpers/sessions_helber.rb
+  include SessionsHelper
+
+  before_action :authenticate_user, except: [:home]
+
+
+  def home
+    render "/home"
+  end
+
+  private
+
+  def authenticate_user
+      unless current_user
+        # flash[:danger] = "Merci de te connecter"
+        redirect_to '/sessions/sign_up'
+      end
+    end
+
+
+
 end
