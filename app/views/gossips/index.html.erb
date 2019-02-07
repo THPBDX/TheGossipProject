@@ -1,25 +1,25 @@
+<!DOCTYPE html>
+<html>
 <br><br>
-
-<p> Welcome <%= @user.first_name %> !  </p>
+<h3><small class="text-muted">Welcome <%= @name %> !</small></h3>
 <br>
 
 <h5>Voici nos gossips les plus 🔥 :</h5>
-<section>
-
+<body>
   <div class="container">
     <% Gossip.all.each do |gossip| %>
     <div class="card-deck-wrapper">
       <div class="card-deck">
-
         <div class="card bg-secondary mb-3" style="max-width: 20rem;">
           <div class="card-header"><%=gossip.title %></div>
           <div class="card-body">
             <h6 class="card-text">Créé par <%=gossip.user.first_name %></h6>
-            <p><%= link_to("Gossip link", "gossip/#{gossip.id}") %></p>
+            <p><%= link_to("Gossip link", "gossips/#{gossip.id}") %></p>
           </div>
         </div>
       </div>
       <%  end  %>
+    </div>
   </div>
-
-</section>
+</body>
+</html>

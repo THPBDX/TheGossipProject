@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col"><h1><%=@city.name %></h1></div>
+    <section>
+
+      <div class="container">
+       <% puts  Gossip.all.select{|gossip| gossip.user.city.name = @city.name} %>
+
+
+        <% Gossip.all.select{|gossip| gossip.user.city.name = @city.name}.each do |gossip| %>
+
+        <div class="card-deck-wrapper">
+          <div class="card-deck">
+
+            <div class="card bg-secondary mb-3" style="max-width: 20rem;">
+              <div class="card-header"><%=gossip.title %></div>
+              <div class="card-body">
+                <h6 class="card-text">Créé par <%=gossip.user.first_name %></h6>
+                <p><%= link_to("Gossip link", "/gossips/#{gossip.id}") %></p>
+              </div>
+            </div>
+          </div>
+          <%  end  %>
+      </div>
+
+    </section>
+
+  </div>
+</div>
