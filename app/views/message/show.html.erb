@@ -1,9 +1,5 @@
-<br>
-<p>Hey! Bienvenue sur The Gossip Project. C'est quoi ton p'tit nom ? 😏</p>
-
-<div class="form-group">
-  <label class="col-form-label" for="inputDefault"></label>
-  <form action '/' method="post">
+<p> Welcome <%= @user.first_name %> ! Ici c'est notre super site de potins, il est chouette, non ? </p>
+<form action '/' method="post">
     <input type="hidden" name="authenticity_token" value="<%=
     form_authenticity_token %>">
     <div class="input-bar">
@@ -14,5 +10,4 @@
 	</div>
 </div>
 
-<br>
-<p> <%= link_to "➡️ Clique ici pour voir les gossips les plus croustillants du moment ⬅️", "gossips" %> </p>
+<p> <%= link_to "Voir la liste de tous les gossips", "gossips" %> </p>
