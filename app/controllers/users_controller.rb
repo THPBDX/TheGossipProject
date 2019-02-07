@@ -4,8 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    puts "params :"
+    puts params
     id = params["id"].to_i
-    puts "L'ID du gossip :"
+    puts "L'ID du user :"
     puts id
     @user = User.find(id)
   end

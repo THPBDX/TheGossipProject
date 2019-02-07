@@ -4,11 +4,22 @@ class CitiesController < ApplicationController
   end
 
   def show
-    id = params["id"].to_i
-    puts "L'ID du gossip :"
+    puts Gossip.first.title
+    puts "params :"
+    puts params
+    id = params[:id]
+    puts "L'ID de la ville :"
     puts id
     @city = City.find(id)
 
+    @gossip1 = Gossip.first
+    puts "premier gossip"
+    puts @gossip1
+
+    @users = User.joins(:city).where(cities: {name: @city.name})
+    @gossips = Gossip.where(user: @users)
+    puts "matching gossips"
+    puts @gossips
   end
 
   def new
