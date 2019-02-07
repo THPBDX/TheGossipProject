@@ -5,10 +5,15 @@ class GossipsController < ApplicationController
   end
 
   def show
-    puts "L'ID du gossip :"
-    id = params["id"].to_i
-    @gossip = Gossip.find(id)
+    @gossip = Gossip.new
+    puts "params :"
+    puts params
+    puts params[:id]
+    id = params[:id]
     puts id
+    puts Gossip.find(id)
+    @gossip = Gossip.find(id)
+    puts @gossip
   end
 
   def new
@@ -22,7 +27,6 @@ class GossipsController < ApplicationController
     # pour info, le contenu de ce formulaire sera accessible dans le hash params (ton meilleur pote)
     # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
     @gossip = Gossip.new(title: params[:title],content: params[:content],user: @user) # avec xxx qui sont les données obtenues à partir du formulaire
-    puts "c'est passé dans le controlleur !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     puts @gossip.title
     puts @gossip.content
     puts @gossip.user
@@ -44,10 +48,24 @@ class GossipsController < ApplicationController
     # Méthode qui met à jour le potin à partir du contenu du formulaire de edit.html.erb, soumis par l'utilisateur
     # pour info, le contenu de ce formulaire sera accessible dans le hash params
     # Une fois la modification faite, on redirige généralement vers la méthode show (pour afficher le potin modifié)
+
+    @gossip = Gossip.find(params[:id])
+    # A changer avec le user loggé
+    @user = User.first
+        if @gossip.update(title: params[:title],content: params[:content],user: @user)
+        redirect_to @gossip
+      else
+        render :edit
+      end
   end
 
   def destroy
     # Méthode qui récupère le potin concerné et le détruit en base
     # Une fois la suppression faite, on redirige généralement vers la méthode index (pour afficher la liste à jour)
+    @gossip = Gossip.find(params[:id])
+    @jointablegossiptag = JoinTableGossipTag.where(id: @gossip.id)
+    @jointablegossiptag.delete_all
+    @gossip.destroy
+    redirect_to "/gossips"
   end
 end

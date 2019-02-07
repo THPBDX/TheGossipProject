@@ -1,0 +1,31 @@
+<html>
+  <body>
+
+    <% if @gossip != nil %>
+      <% if @gossip.errors.any? %>
+    <p>Nous n'avons pas réussi à éditer le potin pour la (ou les) raison(s) suivante(s) :</p>
+    <ul>
+      <% @gossip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    <% end %>
+
+    <%= form_tag "/gossips/#{params[:id]}", method: "put" do %>
+
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title' %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content' %>
+      <br /> <br />
+
+      <%= submit_tag "Mettre à jour le potin" %>
+
+    <% end %>
+
+
+  </body>
+</html>
