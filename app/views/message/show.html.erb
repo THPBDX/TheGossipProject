@@ -1,5 +1,5 @@
 <br>
-<p>Hey! Bienvenue sur The Gossip Project. C'est quoi ton p'tit nom ? 😏</p>
+<p>Hey! Bienvenue <%= User.find_by(id: session[:user_id]).first_name %> sur The Gossip Project. C'est quoi ton p'tit nom ? 😏</p>
 
 <div class="form-group">
   <label class="col-form-label" for="inputDefault"></label>

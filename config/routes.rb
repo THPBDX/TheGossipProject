@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   get '/contact', to: 'contact#show'
 get '/team', to: 'team#show'
 
-resources :gossips
-resources :users
-resources :cities
+resources :sessions
 
-end
+resources :users
+resources :gossips
+resources :comments
+resources :subcomments
+resources :likes
+
+  end

@@ -1,0 +1,18 @@
+<html>
+  <body>
+
+
+    <%= form_tag "/comments/#{params[:id]}", method: "get" do %>
+
+      <%= label_tag 'Content' %>
+      <%= text_field_tag 'content' %>
+      <br /> <br />
+
+
+      <%= submit_tag "Poster le commentaire" %>
+
+    <% end %>
+
+
+  </body>
+</html>

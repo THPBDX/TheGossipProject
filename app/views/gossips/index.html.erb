@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <br><br>
-<h3><small class="text-muted">Welcome <%= @name %> !</small></h3>
+<h3><small class="text-muted">Welcome<%= User.find_by(id: session[:user_id]).first_name %> !</small></h3>
 <br>
 
 <h5>Voici nos gossips les plus 🔥 :</h5>

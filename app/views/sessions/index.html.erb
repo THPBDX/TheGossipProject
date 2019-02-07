@@ -1,0 +1,18 @@
+<%= form_tag "/sessions/new", method: "post" do %>
+
+<%= label_tag 'Email' %>
+<%= text_area_tag 'email' %>
+<br /> <br />
+
+<%= label_tag 'Mot de passe ' %>
+<%= text_area_tag 'password' %>
+<br /> <br />
+
+<%= label_tag 'Mot de passe ' %>
+<%= text_area_tag 'password' %>
+<br /> <br />
+
+
+  <%= submit_tag "Se connecter" %>
+
+<% end %>
