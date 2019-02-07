@@ -3,7 +3,8 @@
     <div class="all-new">
     <% if @gossip != nil %>
       <% if @gossip.errors.any? %>
-    <p>Oups, nous n'avons pas réussi à créer ce gossip pour la (ou les) raison(s) suivante(s) :</p>
+      <br>
+    <h6>Oups, nous n'avons pas réussi à créer ce gossip pour la (ou les) raison(s) suivante(s) :</h6>
     <ul>
       <% @gossip.errors.full_messages.each do |message| %>
         <li><%= message %></li>
