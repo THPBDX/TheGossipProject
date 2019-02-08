@@ -37,9 +37,9 @@
 
       <li class="nav-item">
         <% if logged_in? %>
-          <%= link_to "Se déconnecter", "/sessions/#{current_user.id}", method: :delete %>
+          <%= link_to "Se déconnecter", "/sessions/#{session[:user_id]}", method: :delete %>
               <% else %>
-          <%= link_to "Se connecter", "/sessions/log_in" %>
+          <%= link_to "Se connecter", "/sessions/login" %>
           <%= link_to "S'inscrire", "/sessions/sign_up" %>
           <% end %>
         </li>

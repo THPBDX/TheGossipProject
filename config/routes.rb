@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   post '/sessions/login', to: 'sessions#create_login'
   post '/sessions/sign_up', to: 'sessions#create_signup'
 
+  #delete '/sessions/:id', to: 'sessions#destroy'
+  #get '/sessions/:id', to: 'sessions#show'
 
+resources :sessions
 resources :users
 resources :gossips
 resources :comments

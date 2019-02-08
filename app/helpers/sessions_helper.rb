@@ -8,10 +8,15 @@ module SessionsHelper
  end
 
   def logged_in?
-    session[:user_id] != nil ? true:false
+    is_logged = (session[:user_id] != nil)
+    puts "is_logged: #{is_logged}"
+    session[:user_id] != nil
   end
 
   def new
   end
-  
+
+  def show
+  end
+
 end

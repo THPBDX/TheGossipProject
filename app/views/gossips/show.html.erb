@@ -27,10 +27,5 @@
 <div class="col"><%= link_to("Editer le gossip", "/gossips/#{@gossip.id}/edit") %></div>
 
 <br><br><br>
-<div class="delete-button"
+
 <%= button_to "Supprimer le gossip", "/gossips/#{@gossip.id}", method: :delete %>
-<!-- <form method="delete" action="/gossips/#{@gossip.id}" class="button_to">
-<input type="hidden" name="_method" value="delete" />
-<input data-confirm='Are you sure?' value="Delete Gossip" type="submit" />
-<input name="authenticity_token" type="hidden" value=/>
-</div>
