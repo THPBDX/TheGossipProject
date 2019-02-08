@@ -37,24 +37,17 @@ h6 {
 	flex-wrap: wrap;
 }
 
-body {
-
-}
+body {}
 
 .navbar {
 	width: 100%;
 	flex-direction: row;
+	justify-content: space-between;
 }
 
 .navbar-brand{
-	width: 60%;
+	width: 50%;
 	display: flex;
-	justify-content: flex-start;
-}
-
-.form-group {
-	display: flex;
-	justify-content: center;
 }
 
 .container {
@@ -66,6 +59,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .col {
@@ -98,8 +92,16 @@ body {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
  	transition: 0.3s;
  	flex-wrap: wrap;
- 
 }
+
+.sign_up-global {
+	display: flex;
+	justify-content: space-around !important;
+}
+
+.sign_up-left {}
+
+.sign_up-right {}
 
 input {
 	outline: none;
@@ -133,5 +135,4 @@ input[type=submit]:active {
 	background-color: #e6e5e5;
 	border-radius: 2px;
 	font: "Nunito Sans";
-
 }
