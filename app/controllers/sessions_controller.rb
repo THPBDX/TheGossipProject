@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_action :authenticate_user, only: [:index]
-  
+
 
   def new_signup
     render "/sessions/sign_up"
@@ -38,7 +38,10 @@ class SessionsController < ApplicationController
 
 
   def destroy
-    session.delete(:user_id)
+    puts "param_id: #{params[:id]}"
+    puts "param_user_id: #{params[:user_id]}"
+    puts "user_id: #{:user_id}"
+    session.delete(params[:id])
   end
 
   def authenticate_user
