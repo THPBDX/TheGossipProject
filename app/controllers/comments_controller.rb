@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def show
       @user=User.new
-      @comment = Comment.create!(gossip: Gossip.where(id: params[:id]), user: User.where content: params[:content])
+      @comment = Comment.create!(gossip: Gossip.where(id: params[:id]), user: User.where(content: params[:content]))
   end
 
   def new
