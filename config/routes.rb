@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post '/sessions/login', to: 'sessions#create_login'
   post '/sessions/sign_up', to: 'sessions#create_signup'
 
+  get '/sessions/:id', to: 'sessions#show'
+  delete '/sessions/:id', to: 'sessions#destroy'
 
 resources :users
 resources :gossips
