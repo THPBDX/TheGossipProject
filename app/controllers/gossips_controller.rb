@@ -22,8 +22,7 @@ class GossipsController < ApplicationController
 
   def create
     # A changer avec le user loggé
-    @user = User.first
-    @gossip = Gossip.new(title: params[:title],content: params[:content],user: @user) # avec xxx qui sont les données obtenues à partir du formulaire
+    @gossip = Gossip.new(title: params[:title],content: params[:content],user: current_user) # avec xxx qui sont les données obtenues à partir du formulaire
     puts @gossip.title
     puts @gossip.content
     puts @gossip.user
