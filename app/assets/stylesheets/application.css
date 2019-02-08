@@ -37,7 +37,11 @@ h6 {
 	flex-wrap: wrap;
 }
 
-body {}
+section {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
 
 .navbar {
 	width: 100%;

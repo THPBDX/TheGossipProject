@@ -21,5 +21,6 @@ resources :gossips
 resources :comments
 resources :subcomments
 resources :likes
+resources :cities
 
   end
